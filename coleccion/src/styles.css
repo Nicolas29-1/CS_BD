@@ -1,0 +1,119 @@
+:root {
+  --tinta: #14213d;
+  --tinta-clara: #44506b;
+  --fondo: #eef1f6;
+  --blanco: #ffffff;
+  --rojo: #d62828;
+  --rojo-oscuro: #a81e1e;
+  --dorado: #fca311;
+  --borde: #d5dae4;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Archivo', sans-serif;
+  color: var(--tinta);
+  background: var(--fondo);
+  line-height: 1.6;
+}
+
+app-root { display: flex; flex-direction: column; min-height: 100vh; }
+
+h1, h2, .marca, .codigo-error { font-family: 'Archivo Black', sans-serif; font-weight: 400; }
+
+/* Cabecera */
+.cabecera {
+  background: var(--tinta);
+  border-bottom: 4px solid var(--rojo);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.marca { color: var(--blanco); font-size: 1.4rem; text-decoration: none; padding: 1rem 0; }
+.menu { display: flex; gap: 0.25rem; }
+.menu a {
+  color: #dbe1ee;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 1.1rem 1rem;
+  border-bottom: 4px solid transparent;
+  margin-bottom: -4px;
+}
+.menu a:hover { color: var(--dorado); }
+.menu a.activo { color: var(--blanco); border-bottom-color: var(--dorado); }
+a:focus-visible { outline: 3px solid var(--dorado); outline-offset: 2px; }
+
+/* Contenido y pie */
+.contenido { flex: 1; width: 100%; max-width: 1000px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+.pie { background: var(--tinta); color: #c3cbdc; text-align: center; padding: 1.25rem; font-size: 0.9rem; }
+
+/* Botón */
+.boton {
+  display: inline-block;
+  background: var(--rojo);
+  color: var(--blanco);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.75rem 1.6rem;
+  border-radius: 6px;
+}
+.boton:hover { background: var(--rojo-oscuro); }
+
+/* Inicio */
+.hero {
+  background: var(--tinta);
+  color: var(--blanco);
+  border-radius: 10px;
+  border-bottom: 8px solid var(--dorado);
+  padding: 3rem 2.5rem;
+  margin-bottom: 2rem;
+}
+.hero h1 { font-size: clamp(2rem, 5.5vw, 3.2rem); line-height: 1.1; margin-bottom: 1rem; max-width: 16ch; }
+.hero p { max-width: 55ch; margin-bottom: 1.75rem; color: #dbe1ee; }
+
+.rejilla { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; }
+.tarjeta { background: var(--blanco); border: 1px solid var(--borde); border-top: 4px solid var(--rojo); border-radius: 10px; padding: 1.5rem; }
+.tarjeta h2 { font-size: 1.3rem; margin-bottom: 0.4rem; }
+.tarjeta p { color: var(--tinta-clara); }
+
+/* Catálogo */
+.titulo { font-size: 2.2rem; line-height: 1.15; }
+.subtitulo { color: var(--tinta-clara); margin: 0.4rem 0 1.5rem; }
+
+.tabla-contenedor { overflow-x: auto; background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; }
+.tabla { width: 100%; border-collapse: collapse; min-width: 720px; }
+.tabla th, .tabla td { padding: 0.8rem 1rem; text-align: left; border-bottom: 1px solid var(--borde); }
+.tabla thead th { background: var(--tinta); color: var(--blanco); font-weight: 600; }
+.tabla tbody tr:nth-child(even) { background: #f6f8fb; }
+.tabla tbody tr:hover { background: #fff3dc; }
+.tabla tbody tr:last-child td { border-bottom: none; }
+.tabla .num { text-align: right; }
+
+.etiqueta, .rareza {
+  display: inline-block;
+  text-align: center;
+  padding: 0.1rem 0.7rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.etiqueta { min-width: 2.5rem; background: #e0f0e4; color: #1e5b2b; }
+.etiqueta.bajo { background: #fde4e1; color: var(--rojo-oscuro); }
+.rareza { background: #e6e9f0; color: var(--tinta-clara); }
+.rareza.rara { background: #dce6ff; color: #1d3f9e; }
+.rareza.epica { background: #fff0cc; color: #8a5a00; }
+
+/* 404 */
+.error { text-align: center; padding: 3rem 1rem; }
+.codigo-error { font-size: clamp(6rem, 20vw, 10rem); line-height: 1; color: var(--rojo); text-shadow: 4px 4px 0 var(--dorado); }
+.error h1 { font-size: 2rem; margin: 0.5rem 0; }
+.error p:not(.codigo-error) { max-width: 45ch; margin: 0 auto 1.75rem; color: var(--tinta-clara); }
+
+@media (max-width: 600px) {
+  .cabecera { padding: 0 1rem; }
+  .hero { padding: 2rem 1.25rem; }
+}
