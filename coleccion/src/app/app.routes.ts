@@ -4,8 +4,8 @@ import { Productos } from './productos/productos';
 import { NoEncontrado } from './no-encontrado/no-encontrado';
 
 export const routes: Routes = [
-  { path: '', component: Inicio, title: 'Inicio | Cofre Coleccionista' },
-  { path: 'productos', component: Productos, title: 'Catálogo | Cofre Coleccionista' },
-  // Cualquier otra ruta cae aquí (siempre debe ir al final)
-  { path: '**', component: NoEncontrado, title: 'Página no encontrada' }
+    { path: '', component: Inicio, title: 'Componente Inicio' },
+    { path: 'inicio', component: Inicio, title: 'Componente Inicio' },
+    { path: 'productos', component: Productos, title: 'Catálogo de productos' },
+    { path: '**', component: NoEncontrado, title: 'Recurso no encontrado' }
 ];
