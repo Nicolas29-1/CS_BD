@@ -72,8 +72,8 @@ a:focus-visible { outline: 3px solid var(--dorado); outline-offset: 2px; }
   padding: 3rem 2.5rem;
   margin-bottom: 2rem;
 }
-.hero h1 { font-size: clamp(2rem, 5.5vw, 3.2rem); line-height: 1.1; margin-bottom: 1rem; max-width: 16ch; }
-.hero p { max-width: 55ch; margin-bottom: 1.75rem; color: #dbe1ee; }
+.hero h1 { font-size: clamp(2rem, 5.5vw, 3.2rem); line-height: 1.1; margin-bottom: 1rem; }
+.hero p { max-width: 90ch; margin-bottom: 1.75rem; color: #dbe1ee; }
 
 .rejilla { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; }
 .tarjeta { background: var(--blanco); border: 1px solid var(--borde); border-top: 4px solid var(--rojo); border-radius: 10px; padding: 1.5rem; }
@@ -111,7 +111,6 @@ a:focus-visible { outline: 3px solid var(--dorado); outline-offset: 2px; }
 .error { text-align: center; padding: 3rem 1rem; }
 .codigo-error { font-size: clamp(6rem, 20vw, 10rem); line-height: 1; color: var(--rojo); text-shadow: 4px 4px 0 var(--dorado); }
 .error h1 { font-size: 2rem; margin: 0.5rem 0; }
-.error p:not(.codigo-error) { max-width: 45ch; margin: 0 auto 1.75rem; color: var(--tinta-clara); }
 
 @media (max-width: 600px) {
   .cabecera { padding: 0 1rem; }
