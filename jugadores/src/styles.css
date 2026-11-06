@@ -1,0 +1,40 @@
+label, input, select, textarea {
+  display: block;
+  margin-bottom: 4px;
+}
+
+input[type="radio"] {
+  display: inline;
+}
+
+div {
+  margin-bottom: 10px;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+}
+
+button {
+  background-color: #1d428a;
+  color: white;
+  padding: 6px 14px;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #c8102e;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 4px 8px;
+}
