@@ -1,0 +1,35 @@
+<h2>Lista de productos</h2>
+<button (click)="irAProductoNuevo()">Nuevo producto</button>
+
+@if (error()) {
+  <p style="color: red">{{ error() }}</p>
+}
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Categoría</th>
+      <th>Colección</th>
+      <th>Precio</th>
+      <th>Stock</th>
+      <th>Imágenes</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (p of productos(); track p.id) {
+      <tr>
+        <td>{{ p.id }}</td>
+        <td>{{ p.name }}</td>
+        <td>{{ p.categoryName }}</td>
+        <td>{{ p.collectionName ?? '-' }}</td>
+        <td>{{ p.price }}</td>
+        <td>{{ p.stock }}</td>
+        <td>{{ p.images.length }}</td>
+      </tr>
+    } @empty {
+      <tr><td colspan="7">No hay productos disponibles</td></tr>
+    }
+  </tbody>
+</table>
